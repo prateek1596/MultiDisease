@@ -1,0 +1,16 @@
+# Python
+venv/
+backend/venv/
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# Data / models (optional)
+*.pkl
+*.h5
+*.csv
+
+# OS
+.DS_Store
