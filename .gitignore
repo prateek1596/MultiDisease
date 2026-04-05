@@ -13,4 +13,6 @@ __pycache__/
 *.csv
 
 # OS
-.DS_Store
+.DS_Store__pycache__/ 
+*.pyc 
+backend/logs/ 
