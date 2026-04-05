@@ -143,3 +143,45 @@ DETAIL:  Key (typname, typnamespace)=(userrole, 2200) already exists.
 2026-03-26T11:51:40.973888+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | SMOTE → {1: 200, 0: 200}
 2026-03-26T11:51:40.974905+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=kidney train=400 test=80 features=21
 2026-03-26T11:51:40.979117+0530 | INFO | app.routes.fairness:run_fairness_analysis | Fairness | disease=kidney model=xgboost n=80 groups=['Male', 'Female']
+2026-04-03T16:09:56.867605+0530 | INFO | app.main:lifespan | Starting Multi-Disease Prediction System v3.0
+2026-04-03T16:09:58.543539+0530 | INFO | app.core.database:init_db | Database initialized successfully
+2026-04-03T16:09:58.547298+0530 | INFO | app.main:lifespan | Startup complete
+2026-04-03T16:13:05.787672+0530 | INFO | app.main:lifespan | Starting Multi-Disease Prediction System v3.0
+2026-04-03T16:13:06.092762+0530 | INFO | app.core.database:init_db | Database initialized successfully
+2026-04-03T16:13:06.095261+0530 | INFO | app.main:lifespan | Startup complete
+2026-04-03T16:15:04.711075+0530 | INFO | app.main:lifespan | Starting Multi-Disease Prediction System v3.0
+2026-04-03T16:15:04.989831+0530 | INFO | app.core.database:init_db | Database initialized successfully
+2026-04-03T16:15:04.993656+0530 | INFO | app.main:lifespan | Startup complete
+2026-04-03T16:20:46.788659+0530 | INFO | app.main:lifespan | Starting Multi-Disease Prediction System v3.0
+2026-04-03T16:20:47.049599+0530 | INFO | app.core.database:init_db | Database initialized successfully
+2026-04-03T16:20:47.052953+0530 | INFO | app.main:lifespan | Startup complete
+2026-04-04T13:08:37.813699+0530 | INFO | app.main:lifespan | Starting Multi-Disease Prediction System v3.0
+2026-04-04T13:08:38.263246+0530 | INFO | app.core.database:init_db | Database initialized successfully
+2026-04-04T13:08:38.265702+0530 | INFO | app.main:lifespan | Startup complete
+2026-04-04T13:15:39.005885+0530 | INFO | app.main:lifespan | Starting Multi-Disease Prediction System v3.0
+2026-04-04T13:15:39.137728+0530 | INFO | app.core.database:init_db | Database initialized successfully
+2026-04-04T13:15:39.139166+0530 | INFO | app.main:lifespan | Startup complete
+2026-04-04T13:15:47.791212+0530 | INFO | app.main:lifespan | Starting Multi-Disease Prediction System v3.0
+2026-04-04T13:15:47.895417+0530 | INFO | app.core.database:init_db | Database initialized successfully
+2026-04-04T13:15:47.896640+0530 | INFO | app.main:lifespan | Startup complete
+2026-04-04T13:22:54.430829+0530 | INFO | app.ml.data_loader:load_heart_disease | Loaded heart.csv  shape=(297, 14)
+2026-04-04T13:22:54.506872+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | SMOTE → {1: np.int64(128), 0: np.int64(128)}
+2026-04-04T13:22:54.507473+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=heart train=256 test=60 features=13
+2026-04-04T13:25:31.129665+0530 | INFO | app.main:lifespan | Starting Multi-Disease Prediction System v3.0
+2026-04-04T13:25:31.267227+0530 | INFO | app.core.database:init_db | Database initialized successfully
+2026-04-04T13:25:31.268846+0530 | INFO | app.main:lifespan | Startup complete
+2026-04-04T13:27:25.940794+0530 | INFO | app.main:lifespan | Starting Multi-Disease Prediction System v3.0
+2026-04-04T13:27:26.080469+0530 | INFO | app.core.database:init_db | Database initialized successfully
+2026-04-04T13:27:26.081348+0530 | INFO | app.main:lifespan | Startup complete
+2026-04-04T16:53:54.345622+0530 | INFO | app.main:lifespan | Starting Multi-Disease Prediction System v3.0
+2026-04-04T16:53:54.871172+0530 | INFO | app.core.database:init_db | Database initialized successfully
+2026-04-04T16:53:54.876738+0530 | INFO | app.main:lifespan | Startup complete
+2026-04-04T16:54:23.610168+0530 | INFO | app.main:lifespan | Starting Multi-Disease Prediction System v3.0
+2026-04-04T16:54:23.804932+0530 | INFO | app.core.database:init_db | Database initialized successfully
+2026-04-04T16:54:23.807008+0530 | INFO | app.main:lifespan | Startup complete
+2026-04-05T16:17:48.670325+0530 | INFO | app.main:lifespan | Starting Multi-Disease Prediction System v3.0
+2026-04-05T16:17:49.207893+0530 | INFO | app.core.database:init_db | Database initialized successfully
+2026-04-05T16:17:49.210697+0530 | INFO | app.main:lifespan | Startup complete
+2026-04-05T16:18:12.232961+0530 | INFO | app.main:lifespan | Starting Multi-Disease Prediction System v3.0
+2026-04-05T16:18:12.629273+0530 | INFO | app.core.database:init_db | Database initialized successfully
+2026-04-05T16:18:12.631359+0530 | INFO | app.main:lifespan | Startup complete

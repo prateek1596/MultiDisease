@@ -133,6 +133,7 @@ class PredictionResponse(BaseModel):
     probability: Dict[str, float]
     explanation: Optional[SHAPExplanation] = None
     prediction_id: Optional[int] = None
+    risk: Optional[Dict[str, Any]] = None
 
 
 # ─── Model Performance Schemas ────────────────────────────────────────────────
@@ -172,3 +173,91 @@ class TrainResponse(BaseModel):
     status: str
     message: str
     results: Optional[Dict[str, Any]] = None
+
+
+# ─── Risk Band ────────────────────────────────────────────────────────────────
+
+class RiskBandSchema(BaseModel):
+    level: str
+    color: str
+    probability: float
+    pct: float
+    action: str
+    min_prob: float
+    max_prob: float
+
+
+# ─── Counterfactual ───────────────────────────────────────────────────────────
+
+class FeatureChange(BaseModel):
+    feature: str
+    original: float
+    counterfactual: float
+    delta: float
+
+
+class CounterfactualItem(BaseModel):
+    new_input: Dict[str, float]
+    new_prediction: int
+    new_probability: float
+    features_changed: int
+    changes: List[FeatureChange]
+
+
+class CounterfactualResponse(BaseModel):
+    original_prediction: int
+    original_probability: float
+    target_class: int
+    counterfactuals: List[CounterfactualItem]
+    method: str
+
+
+# ─── A/B Testing ──────────────────────────────────────────────────────────────
+
+class ABConfigRequest(BaseModel):
+    model_a: str
+    model_b: str
+    enabled: bool = True
+    min_samples: int = 30
+
+
+class ABAnalysisResponse(BaseModel):
+    status: str
+    disease: Optional[str] = None
+    n_samples: Optional[int] = None
+    model_a: Optional[str] = None
+    model_b: Optional[str] = None
+    mean_prob_a: Optional[float] = None
+    mean_prob_b: Optional[float] = None
+    mean_difference: Optional[float] = None
+    agreement_rate: Optional[float] = None
+    t_statistic: Optional[float] = None
+    p_value: Optional[float] = None
+    significant_005: Optional[bool] = None
+    recommendation: Optional[str] = None
+    message: Optional[str] = None
+
+
+# ─── Analytics ────────────────────────────────────────────────────────────────
+
+class AnalyticsSummary(BaseModel):
+    total_predictions: int
+    predictions_today: int
+    by_disease: Dict[str, int]
+    by_model: Dict[str, int]
+    positive_rate: float
+    avg_confidence: float
+
+
+# ─── Patient Report ───────────────────────────────────────────────────────────
+
+class PatientReportRequest(BaseModel):
+    prediction_id: Optional[int] = None
+    prediction_data: Optional[Dict[str, Any]] = None
+    patient_name: str = "Anonymous Patient"
+    patient_id: Optional[str] = None
+    clinician: Optional[str] = None
+
+
+# ─── Update PredictionResponse to include risk ────────────────────────────────
+# (PredictionResponse already defined above; patch it here by re-declaring)

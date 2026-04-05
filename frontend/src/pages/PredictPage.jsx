@@ -20,6 +20,7 @@ export default function PredictPage() {
   const [selectedDisease, setSelectedDisease] = useState(searchParams.get('disease') || 'heart')
   const [selectedModel, setSelectedModel] = useState('best')
   const [result, setResult] = useState(null)
+  const [lastInput, setLastInput] = useState(null)
 
   const { register, handleSubmit, reset, formState: { errors } } = useForm()
   const disease = DISEASES[selectedDisease]
@@ -54,7 +55,7 @@ export default function PredictPage() {
     Object.entries(data).forEach(([k, v]) => {
       numeric[k] = v === '' ? 0 : parseFloat(v)
     })
-    mutation.mutate(numeric)
+    { setLastInput(numeric); mutation.mutate(numeric) }
   }
 
   return (
@@ -87,7 +88,7 @@ export default function PredictPage() {
       </div>
 
       {result && (
-        <PredictionResult result={result} disease={selectedDisease} onReset={() => setResult(null)} />
+        <PredictionResult result={result} disease={selectedDisease} inputData={lastInput} onReset={() => { setResult(null); setLastInput(null) }} />
       )}
 
       {/* Form */}
