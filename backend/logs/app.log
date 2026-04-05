@@ -185,3 +185,10 @@ DETAIL:  Key (typname, typnamespace)=(userrole, 2200) already exists.
 2026-04-05T16:18:12.232961+0530 | INFO | app.main:lifespan | Starting Multi-Disease Prediction System v3.0
 2026-04-05T16:18:12.629273+0530 | INFO | app.core.database:init_db | Database initialized successfully
 2026-04-05T16:18:12.631359+0530 | INFO | app.main:lifespan | Startup complete
+2026-04-05T16:18:48.323166+0530 | INFO | app.routes.auth:register | New user registered: admin2
+2026-04-05T16:19:07.729209+0530 | INFO | app.ml.data_loader:load_heart_disease | Loaded heart.csv  shape=(297, 14)
+2026-04-05T16:19:07.868394+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | SMOTE → {1: np.int64(128), 0: np.int64(128)}
+2026-04-05T16:19:07.869363+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=heart train=256 test=60 features=13
+2026-04-05T16:19:51.296381+0530 | INFO | app.ml.data_loader:load_heart_disease | Loaded heart.csv  shape=(297, 14)
+2026-04-05T16:19:51.360813+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | SMOTE → {1: np.int64(128), 0: np.int64(128)}
+2026-04-05T16:19:51.362124+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=heart train=256 test=60 features=13
