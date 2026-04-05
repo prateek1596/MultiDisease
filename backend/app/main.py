@@ -12,7 +12,7 @@ from loguru import logger
 
 from app.core.config import settings
 from app.core.database import init_db
-from app.routes import predict, models, report, auth, train, fairness, minimal_features
+from app.routes import predict, models, report, auth, train, fairness, minimal_features, analytics, batch, research, tracking, mlflow_routes
 from app.utils.logger import setup_logger
 
 
@@ -56,6 +56,11 @@ app.include_router(report.router,           prefix="/api",                  tags
 app.include_router(train.router,            prefix="/api",                  tags=["Training"])
 app.include_router(fairness.router,         prefix="/api",                  tags=["Fairness"])
 app.include_router(minimal_features.router, prefix="/api",                  tags=["Minimal Features"])
+app.include_router(analytics.router,        prefix="/api",                  tags=["Analytics"])
+app.include_router(batch.router,            prefix="/api",                  tags=["Batch Prediction"])
+app.include_router(research.router,         prefix="/api",                  tags=["Research"])
+app.include_router(tracking.router,         prefix="/api",                  tags=["Patient Tracking"])
+app.include_router(mlflow_routes.router,    prefix="/api",                  tags=["MLflow Tracking"])
 
 
 @app.get("/", tags=["Health"])

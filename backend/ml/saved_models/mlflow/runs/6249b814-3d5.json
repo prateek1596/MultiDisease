@@ -1,0 +1,57 @@
+{
+  "run_id": "6249b814-3d5",
+  "experiment_id": "0faa4782",
+  "run_name": "kidney_xgboost",
+  "status": "completed",
+  "start_time": "2026-04-05T15:20:15.870550",
+  "end_time": "2026-04-05T15:20:15.879298",
+  "tags": {
+    "disease": "kidney",
+    "model_type": "xgboost"
+  },
+  "params": {
+    "disease": "kidney",
+    "model_type": "xgboost",
+    "n_estimators": 100,
+    "max_depth": 10,
+    "test_size": 0.2
+  },
+  "metrics": {
+    "accuracy": [
+      {
+        "value": 0.8666194752911605,
+        "step": null,
+        "timestamp": "2026-04-05T15:20:15.877676"
+      }
+    ],
+    "precision": [
+      {
+        "value": 0.8936224641957108,
+        "step": null,
+        "timestamp": "2026-04-05T15:20:15.877692"
+      }
+    ],
+    "recall": [
+      {
+        "value": 0.836432759697942,
+        "step": null,
+        "timestamp": "2026-04-05T15:20:15.877702"
+      }
+    ],
+    "f1_score": [
+      {
+        "value": 0.8414978590183625,
+        "step": null,
+        "timestamp": "2026-04-05T15:20:15.877708"
+      }
+    ],
+    "auc_roc": [
+      {
+        "value": 0.891729592544562,
+        "step": null,
+        "timestamp": "2026-04-05T15:20:15.877714"
+      }
+    ]
+  },
+  "artifacts": []
+}

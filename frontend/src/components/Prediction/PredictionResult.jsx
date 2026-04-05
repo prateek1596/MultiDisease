@@ -1,6 +1,7 @@
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts'
 import { CheckCircle, XCircle, Zap, RotateCcw } from 'lucide-react'
 import clsx from 'clsx'
+import LimeExplanation from './LimeExplanation'
 
 const DISEASE_LABELS = {
   heart:    { 0: 'No Heart Disease',    1: 'Heart Disease Detected' },
@@ -8,7 +9,7 @@ const DISEASE_LABELS = {
   kidney:   { 0: 'No Kidney Disease',   1: 'Chronic Kidney Disease Detected' },
 }
 
-export default function PredictionResult({ result, disease, onReset }) {
+export default function PredictionResult({ result, disease, onReset, limeExplanation }) {
   const isPositive = result.prediction === 1
   const label = DISEASE_LABELS[disease]?.[result.prediction] ?? result.label
   const confidence = (result.confidence * 100).toFixed(1)
@@ -124,6 +125,13 @@ export default function PredictionResult({ result, disease, onReset }) {
           <p className="text-[11px] text-slate-400 mt-2">
             🔴 Red bars increase disease risk · 🟢 Green bars decrease risk
           </p>
+        </div>
+      )}
+
+      {/* LIME Explanation */}
+      {limeExplanation && (
+        <div className="bg-white rounded-xl border border-slate-200 p-5 mt-4">
+          <LimeExplanation explanation={limeExplanation} />
         </div>
       )}
     </div>

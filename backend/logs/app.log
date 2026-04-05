@@ -1,0 +1,118 @@
+2026-04-05T20:34:33.944864+0530 | INFO | app.main:lifespan | Starting Multi-Disease Prediction System
+2026-04-05T20:34:34.496684+0530 | INFO | app.core.database:init_db | Database initialized successfully
+2026-04-05T20:34:34.501856+0530 | INFO | app.main:lifespan | Startup complete
+2026-04-05T20:35:10.291138+0530 | INFO | app.ml.data_loader:load_heart_disease | Loaded heart.csv  shape=(297, 14)
+2026-04-05T20:35:10.374384+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | SMOTE → {1: np.int64(128), 0: np.int64(128)}
+2026-04-05T20:35:10.375394+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=heart train=256 test=60 features=13
+2026-04-05T20:35:13.948117+0530 | INFO | app.ml.data_loader:load_heart_disease | Loaded heart.csv  shape=(297, 14)
+2026-04-05T20:35:14.019706+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | SMOTE → {1: np.int64(128), 0: np.int64(128)}
+2026-04-05T20:35:14.020969+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=heart train=256 test=60 features=13
+2026-04-05T20:35:14.254991+0530 | INFO | app.ml.data_loader:load_heart_disease | Loaded heart.csv  shape=(297, 14)
+2026-04-05T20:35:14.317182+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | SMOTE → {1: np.int64(128), 0: np.int64(128)}
+2026-04-05T20:35:14.318598+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=heart train=256 test=60 features=13
+2026-04-05T20:35:14.433007+0530 | INFO | app.ml.data_loader:load_heart_disease | Loaded heart.csv  shape=(297, 14)
+2026-04-05T20:35:14.485862+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | SMOTE → {1: np.int64(128), 0: np.int64(128)}
+2026-04-05T20:35:14.487186+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=heart train=256 test=60 features=13
+2026-04-05T20:35:14.549003+0530 | INFO | app.ml.data_loader:load_heart_disease | Loaded heart.csv  shape=(297, 14)
+2026-04-05T20:35:14.596428+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | SMOTE → {1: np.int64(128), 0: np.int64(128)}
+2026-04-05T20:35:14.596876+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=heart train=256 test=60 features=13
+2026-04-05T20:35:14.633372+0530 | INFO | app.ml.data_loader:load_heart_disease | Loaded heart.csv  shape=(297, 14)
+2026-04-05T20:35:14.670205+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | SMOTE → {1: np.int64(128), 0: np.int64(128)}
+2026-04-05T20:35:14.670864+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=heart train=256 test=60 features=13
+2026-04-05T20:35:17.882094+0530 | INFO | app.ml.data_loader:load_heart_disease | Loaded heart.csv  shape=(297, 14)
+2026-04-05T20:35:17.929864+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | SMOTE → {1: np.int64(128), 0: np.int64(128)}
+2026-04-05T20:35:17.930436+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=heart train=256 test=60 features=13
+2026-04-05T20:35:27.927576+0530 | INFO | app.ml.data_loader:load_diabetes | Loaded diabetes.csv  shape=(768, 9)
+2026-04-05T20:35:27.950951+0530 | INFO | app.ml.pipelines.preprocessing:_clean_diabetes | Diabetes: zero→median imputation applied
+2026-04-05T20:35:27.987575+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | SMOTE → {0: np.int64(400), 1: np.int64(400)}
+2026-04-05T20:35:27.988480+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=diabetes train=800 test=154 features=8
+2026-04-05T20:35:28.139015+0530 | INFO | app.ml.data_loader:load_diabetes | Loaded diabetes.csv  shape=(768, 9)
+2026-04-05T20:35:28.155450+0530 | INFO | app.ml.pipelines.preprocessing:_clean_diabetes | Diabetes: zero→median imputation applied
+2026-04-05T20:35:28.185903+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | SMOTE → {0: np.int64(400), 1: np.int64(400)}
+2026-04-05T20:35:28.186399+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=diabetes train=800 test=154 features=8
+2026-04-05T20:35:28.275905+0530 | INFO | app.ml.data_loader:load_diabetes | Loaded diabetes.csv  shape=(768, 9)
+2026-04-05T20:35:28.285230+0530 | INFO | app.ml.pipelines.preprocessing:_clean_diabetes | Diabetes: zero→median imputation applied
+2026-04-05T20:35:28.363092+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | SMOTE → {0: np.int64(400), 1: np.int64(400)}
+2026-04-05T20:35:28.369371+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=diabetes train=800 test=154 features=8
+2026-04-05T20:35:28.420136+0530 | INFO | app.ml.data_loader:load_diabetes | Loaded diabetes.csv  shape=(768, 9)
+2026-04-05T20:35:28.428309+0530 | INFO | app.ml.pipelines.preprocessing:_clean_diabetes | Diabetes: zero→median imputation applied
+2026-04-05T20:35:28.456622+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | SMOTE → {0: np.int64(400), 1: np.int64(400)}
+2026-04-05T20:35:28.457296+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=diabetes train=800 test=154 features=8
+2026-04-05T20:35:28.486035+0530 | INFO | app.ml.data_loader:load_diabetes | Loaded diabetes.csv  shape=(768, 9)
+2026-04-05T20:35:28.494243+0530 | INFO | app.ml.pipelines.preprocessing:_clean_diabetes | Diabetes: zero→median imputation applied
+2026-04-05T20:35:28.518984+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | SMOTE → {0: np.int64(400), 1: np.int64(400)}
+2026-04-05T20:35:28.519418+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=diabetes train=800 test=154 features=8
+2026-04-05T20:35:28.612010+0530 | INFO | app.ml.data_loader:load_diabetes | Loaded diabetes.csv  shape=(768, 9)
+2026-04-05T20:35:28.627134+0530 | INFO | app.ml.pipelines.preprocessing:_clean_diabetes | Diabetes: zero→median imputation applied
+2026-04-05T20:35:28.657801+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | SMOTE → {0: np.int64(400), 1: np.int64(400)}
+2026-04-05T20:35:28.658334+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=diabetes train=800 test=154 features=8
+2026-04-05T20:35:28.811386+0530 | INFO | app.ml.data_loader:load_diabetes | Loaded diabetes.csv  shape=(768, 9)
+2026-04-05T20:35:28.819743+0530 | INFO | app.ml.pipelines.preprocessing:_clean_diabetes | Diabetes: zero→median imputation applied
+2026-04-05T20:35:28.851447+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | SMOTE → {0: np.int64(400), 1: np.int64(400)}
+2026-04-05T20:35:28.851962+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=diabetes train=800 test=154 features=8
+2026-04-05T20:35:47.723666+0530 | INFO | app.ml.data_loader:load_heart_disease | Loaded heart.csv  shape=(297, 14)
+2026-04-05T20:35:47.807563+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | SMOTE → {1: np.int64(128), 0: np.int64(128)}
+2026-04-05T20:35:47.816763+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=heart train=256 test=60 features=13
+2026-04-05T20:39:28.970542+0530 | INFO | app.main:lifespan | Starting Multi-Disease Prediction System
+2026-04-05T20:39:29.191685+0530 | INFO | app.core.database:init_db | Database initialized successfully
+2026-04-05T20:39:29.193257+0530 | INFO | app.main:lifespan | Startup complete
+2026-04-05T20:40:01.269408+0530 | INFO | app.main:lifespan | Starting Multi-Disease Prediction System
+2026-04-05T20:40:01.471836+0530 | INFO | app.core.database:init_db | Database initialized successfully
+2026-04-05T20:40:01.473774+0530 | INFO | app.main:lifespan | Startup complete
+2026-04-05T20:41:10.163292+0530 | INFO | app.main:lifespan | Starting Multi-Disease Prediction System
+2026-04-05T20:41:10.352704+0530 | INFO | app.core.database:init_db | Database initialized successfully
+2026-04-05T20:41:10.354515+0530 | INFO | app.main:lifespan | Startup complete
+2026-04-05T20:41:19.730343+0530 | INFO | app.main:lifespan | Starting Multi-Disease Prediction System
+2026-04-05T20:41:19.909041+0530 | INFO | app.core.database:init_db | Database initialized successfully
+2026-04-05T20:41:19.910730+0530 | INFO | app.main:lifespan | Startup complete
+2026-04-05T20:42:00.559464+0530 | INFO | app.main:lifespan | Starting Multi-Disease Prediction System
+2026-04-05T20:42:00.732704+0530 | INFO | app.core.database:init_db | Database initialized successfully
+2026-04-05T20:42:00.733575+0530 | INFO | app.main:lifespan | Startup complete
+2026-04-05T20:42:07.296067+0530 | INFO | app.main:lifespan | Starting Multi-Disease Prediction System
+2026-04-05T20:42:07.448858+0530 | INFO | app.core.database:init_db | Database initialized successfully
+2026-04-05T20:42:07.450281+0530 | INFO | app.main:lifespan | Startup complete
+2026-04-05T20:42:56.597797+0530 | INFO | app.main:lifespan | Starting Multi-Disease Prediction System
+2026-04-05T20:42:56.806774+0530 | INFO | app.core.database:init_db | Database initialized successfully
+2026-04-05T20:42:56.808576+0530 | INFO | app.main:lifespan | Startup complete
+2026-04-05T20:43:20.714764+0530 | INFO | app.main:lifespan | Starting Multi-Disease Prediction System
+2026-04-05T20:43:20.902809+0530 | INFO | app.core.database:init_db | Database initialized successfully
+2026-04-05T20:43:20.904307+0530 | INFO | app.main:lifespan | Startup complete
+2026-04-05T20:43:39.026606+0530 | INFO | app.main:lifespan | Starting Multi-Disease Prediction System
+2026-04-05T20:43:39.209195+0530 | INFO | app.core.database:init_db | Database initialized successfully
+2026-04-05T20:43:39.210486+0530 | INFO | app.main:lifespan | Startup complete
+2026-04-05T20:44:02.127082+0530 | INFO | app.main:lifespan | Starting Multi-Disease Prediction System
+2026-04-05T20:44:02.418076+0530 | INFO | app.core.database:init_db | Database initialized successfully
+2026-04-05T20:44:02.419651+0530 | INFO | app.main:lifespan | Startup complete
+2026-04-05T20:44:14.292106+0530 | INFO | app.main:lifespan | Starting Multi-Disease Prediction System
+2026-04-05T20:44:14.514030+0530 | INFO | app.core.database:init_db | Database initialized successfully
+2026-04-05T20:44:14.515861+0530 | INFO | app.main:lifespan | Startup complete
+2026-04-05T20:50:15.798687+0530 | INFO | app.services.mlflow_service:create_experiment | Created experiment: multi-disease-models (0faa4782)
+2026-04-05T20:50:15.802250+0530 | INFO | app.services.mlflow_service:start_run | Started run: heart_random_forest (74876e2e-d14)
+2026-04-05T20:50:15.809405+0530 | INFO | app.services.mlflow_service:end_run | Ended run: 74876e2e-d14 with status completed
+2026-04-05T20:50:15.813273+0530 | INFO | app.services.mlflow_service:register_model | Registered model: heart_model v1
+2026-04-05T20:50:15.816438+0530 | INFO | app.services.mlflow_service:start_run | Started run: heart_xgboost (92da14ef-aa2)
+2026-04-05T20:50:15.824434+0530 | INFO | app.services.mlflow_service:end_run | Ended run: 92da14ef-aa2 with status completed
+2026-04-05T20:50:15.827012+0530 | INFO | app.services.mlflow_service:register_model | Registered model: heart_model v2
+2026-04-05T20:50:15.834769+0530 | INFO | app.services.mlflow_service:start_run | Started run: diabetes_random_forest (c85429d4-985)
+2026-04-05T20:50:15.842383+0530 | INFO | app.services.mlflow_service:end_run | Ended run: c85429d4-985 with status completed
+2026-04-05T20:50:15.844538+0530 | INFO | app.services.mlflow_service:register_model | Registered model: diabetes_model v1
+2026-04-05T20:50:15.847208+0530 | INFO | app.services.mlflow_service:start_run | Started run: diabetes_xgboost (5160e4ae-a14)
+2026-04-05T20:50:15.851750+0530 | INFO | app.services.mlflow_service:end_run | Ended run: 5160e4ae-a14 with status completed
+2026-04-05T20:50:15.856821+0530 | INFO | app.services.mlflow_service:register_model | Registered model: diabetes_model v2
+2026-04-05T20:50:15.860964+0530 | INFO | app.services.mlflow_service:start_run | Started run: kidney_random_forest (0492f365-ea5)
+2026-04-05T20:50:15.865752+0530 | INFO | app.services.mlflow_service:end_run | Ended run: 0492f365-ea5 with status completed
+2026-04-05T20:50:15.869529+0530 | INFO | app.services.mlflow_service:register_model | Registered model: kidney_model v1
+2026-04-05T20:50:15.874496+0530 | INFO | app.services.mlflow_service:start_run | Started run: kidney_xgboost (6249b814-3d5)
+2026-04-05T20:50:15.880240+0530 | INFO | app.services.mlflow_service:end_run | Ended run: 6249b814-3d5 with status completed
+2026-04-05T20:50:15.882418+0530 | INFO | app.services.mlflow_service:register_model | Registered model: kidney_model v2
+2026-04-05T20:50:15.885633+0530 | INFO | app.services.mlflow_service:transition_model_stage | Model heart_model v1: staging -> production
+2026-04-05T20:50:15.889148+0530 | INFO | app.services.mlflow_service:transition_model_stage | Model diabetes_model v1: staging -> production
+2026-04-05T20:50:15.891682+0530 | INFO | app.services.mlflow_service:transition_model_stage | Model kidney_model v1: staging -> production
+2026-04-05T20:50:15.892498+0530 | INFO | app.services.mlflow_service:initialize_demo_tracking | Demo tracking data initialized
+2026-04-05T20:50:24.562339+0530 | INFO | app.ml.data_loader:load_heart_disease | Loaded heart.csv  shape=(297, 14)
+2026-04-05T20:50:24.597692+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | SMOTE → {1: np.int64(128), 0: np.int64(128)}
+2026-04-05T20:50:24.598542+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=heart train=256 test=60 features=13
+2026-04-05T20:51:04.348443+0530 | ERROR | app.services.uncertainty_service:quantify_uncertainty | Uncertainty quantification failed: 'TrainingService' object has no attribute 'predict'
+2026-04-05T20:51:23.356412+0530 | WARNING | app.services.multilabel_service:predict_all_diseases | Failed to predict heart: 'TrainingService' object has no attribute 'predict'
+2026-04-05T20:51:23.375300+0530 | WARNING | app.services.multilabel_service:predict_all_diseases | Failed to predict diabetes: 'TrainingService' object has no attribute 'predict'
+2026-04-05T20:51:23.388582+0530 | WARNING | app.services.multilabel_service:predict_all_diseases | Failed to predict kidney: 'TrainingService' object has no attribute 'predict'

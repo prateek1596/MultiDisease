@@ -1,0 +1,18 @@
+{
+  "experiment_id": "0faa4782",
+  "name": "multi-disease-models",
+  "description": "Training experiments for multi-disease prediction models",
+  "tags": {
+    "project": "dissertation",
+    "version": "1.0"
+  },
+  "created_at": "2026-04-05T15:20:15.797365",
+  "runs": [
+    "74876e2e-d14",
+    "92da14ef-aa2",
+    "c85429d4-985",
+    "5160e4ae-a14",
+    "0492f365-ea5",
+    "6249b814-3d5"
+  ]
+}

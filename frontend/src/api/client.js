@@ -59,3 +59,73 @@ export const reportAPI = {
   download: () => api.get('/report/download', { responseType: 'blob' }),
   list:     () => api.get('/report/list'),
 }
+
+// ─── Analytics ────────────────────────────────────────────────
+export const analyticsAPI = {
+  // Outlier detection
+  checkOutliers: (disease, inputData, zThreshold = 3.0) =>
+    api.post('/analytics/outliers/check', { disease, input_data: inputData, z_threshold: zThreshold }),
+  getFeatureBounds: (disease) =>
+    api.get(`/analytics/outliers/bounds/${disease}`),
+  
+  // LIME explanations
+  getLimeStatus: () => api.get('/analytics/lime/status'),
+  explainWithLime: (disease, inputData, modelName = 'best', numFeatures = 10) =>
+    api.post('/analytics/lime/explain', { disease, input_data: inputData, model_name: modelName, num_features: numFeatures }),
+  
+  // Performance curves
+  getCurves: (disease, modelName = 'best') =>
+    api.get(`/analytics/curves/${disease}`, { params: { model_name: modelName } }),
+  compareCurves: (disease) =>
+    api.get(`/analytics/curves/${disease}/compare`),
+  getThresholdMetrics: (disease, threshold, modelName = 'best') =>
+    api.get(`/analytics/curves/${disease}/threshold/${threshold}`, { params: { model_name: modelName } }),
+  
+  // Feature importance
+  getFeatureImportance: (disease, modelName = 'best') =>
+    api.get(`/analytics/importance/${disease}`, { params: { model_name: modelName } }),
+  
+  // Multi-label prediction
+  predictMultiLabel: (data) =>
+    api.post('/research/multi-label/predict', data),
+  getComorbidityMatrix: () =>
+    api.get('/research/multi-label/comorbidity-matrix'),
+  
+  // Uncertainty quantification
+  quantifyUncertainty: (data) =>
+    api.post('/research/uncertainty/quantify', data),
+  getCalibration: (disease, nBins = 10) =>
+    api.get(`/research/uncertainty/calibration/${disease}`, { params: { n_bins: nBins } }),
+  
+  // Clinical decision rules
+  compareWithClinicalRules: (data) =>
+    api.post('/research/clinical-rules/compare', data),
+  getAvailableRules: () =>
+    api.get('/research/clinical-rules/available'),
+  
+  // Longitudinal tracking
+  listPatients: (limit = 100) =>
+    api.get('/patients/', { params: { limit } }),
+  getPatientHistory: (patientId, limit) =>
+    api.get(`/patients/${patientId}/history`, { params: { limit } }),
+  getTimelineData: (patientId) =>
+    api.get(`/patients/${patientId}/timeline`),
+  generateDemoPatient: (patientId = 'demo-patient-001') =>
+    api.post('/patients/demo/generate', null, { params: { patient_id: patientId } }),
+  
+  // MLflow tracking
+  getMlflowSummary: () =>
+    api.get('/mlflow/summary'),
+  listExperiments: () =>
+    api.get('/mlflow/experiments'),
+  listRuns: (experimentId) =>
+    api.get('/mlflow/runs', { params: { experiment_id: experimentId } }),
+  listRegisteredModels: () =>
+    api.get('/mlflow/models'),
+  getModelDetails: (name) =>
+    api.get(`/mlflow/models/${name}`),
+  transitionModelStage: (name, version, stage) =>
+    api.post('/mlflow/models/transition', { name, version, stage }),
+  initializeMlflowDemo: () =>
+    api.post('/mlflow/demo/initialize'),
+}

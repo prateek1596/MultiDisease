@@ -4,9 +4,10 @@ import { useForm } from 'react-hook-form'
 import { useMutation } from '@tanstack/react-query'
 import toast from 'react-hot-toast'
 import { Activity, ChevronDown, Loader2, AlertCircle } from 'lucide-react'
-import { predictAPI } from '../api/client'
+import { predictAPI, analyticsAPI } from '../api/client'
 import { DISEASES, MODEL_OPTIONS } from '../utils/diseaseConfig'
 import PredictionResult from '../components/Prediction/PredictionResult'
+import OutlierAlerts from '../components/Prediction/OutlierAlerts'
 import clsx from 'clsx'
 
 const colorBorder = {
@@ -20,6 +21,8 @@ export default function PredictPage() {
   const [selectedDisease, setSelectedDisease] = useState(searchParams.get('disease') || 'heart')
   const [selectedModel, setSelectedModel] = useState('best')
   const [result, setResult] = useState(null)
+  const [outlierAlerts, setOutlierAlerts] = useState([])
+  const [limeExplanation, setLimeExplanation] = useState(null)
 
   const { register, handleSubmit, reset, formState: { errors } } = useForm()
   const disease = DISEASES[selectedDisease]
@@ -27,16 +30,38 @@ export default function PredictPage() {
   useEffect(() => {
     reset()
     setResult(null)
+    setOutlierAlerts([])
+    setLimeExplanation(null)
   }, [selectedDisease, reset])
 
   const mutation = useMutation({
-    mutationFn: (data) =>
-      predictAPI.predict(selectedDisease, {
+    mutationFn: async (data) => {
+      // Check for outliers first
+      try {
+        const outlierResult = await analyticsAPI.checkOutliers(selectedDisease, data)
+        setOutlierAlerts(outlierResult.data.alerts || [])
+      } catch (e) {
+        console.warn('Outlier check failed:', e)
+      }
+
+      // Run prediction
+      const predResult = await predictAPI.predict(selectedDisease, {
         disease: selectedDisease,
         model_name: selectedModel,
         input_data: data,
         explain: true,
-      }).then((r) => r.data),
+      })
+
+      // Get LIME explanation
+      try {
+        const limeResult = await analyticsAPI.explainWithLime(selectedDisease, data, selectedModel)
+        setLimeExplanation(limeResult.data)
+      } catch (e) {
+        console.warn('LIME explanation failed:', e)
+      }
+
+      return predResult.data
+    },
     onSuccess: (data) => {
       setResult(data)
       toast.success('Prediction complete!')
@@ -87,7 +112,19 @@ export default function PredictPage() {
       </div>
 
       {result && (
-        <PredictionResult result={result} disease={selectedDisease} onReset={() => setResult(null)} />
+        <PredictionResult 
+          result={result} 
+          disease={selectedDisease} 
+          onReset={() => { setResult(null); setOutlierAlerts([]); setLimeExplanation(null) }}
+          limeExplanation={limeExplanation}
+        />
+      )}
+
+      {/* Outlier Alerts */}
+      {outlierAlerts.length > 0 && !result && (
+        <div className="card p-5">
+          <OutlierAlerts alerts={outlierAlerts} />
+        </div>
       )}
 
       {/* Form */}
@@ -181,7 +218,7 @@ export default function PredictPage() {
               <><Activity className="w-4 h-4" /> Run Prediction</>
             )}
           </button>
-          <button type="button" onClick={() => { reset(); setResult(null) }} className="btn-secondary">
+          <button type="button" onClick={() => { reset(); setResult(null); setOutlierAlerts([]); setLimeExplanation(null) }} className="btn-secondary">
             Clear Form
           </button>
         </div>

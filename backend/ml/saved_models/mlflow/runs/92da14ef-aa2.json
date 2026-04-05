@@ -1,0 +1,57 @@
+{
+  "run_id": "92da14ef-aa2",
+  "experiment_id": "0faa4782",
+  "run_name": "heart_xgboost",
+  "status": "completed",
+  "start_time": "2026-04-05T15:20:15.814025",
+  "end_time": "2026-04-05T15:20:15.822123",
+  "tags": {
+    "disease": "heart",
+    "model_type": "xgboost"
+  },
+  "params": {
+    "disease": "heart",
+    "model_type": "xgboost",
+    "n_estimators": 100,
+    "max_depth": 10,
+    "test_size": 0.2
+  },
+  "metrics": {
+    "accuracy": [
+      {
+        "value": 0.9420413659284868,
+        "step": null,
+        "timestamp": "2026-04-05T15:20:15.819782"
+      }
+    ],
+    "precision": [
+      {
+        "value": 0.8516143401731109,
+        "step": null,
+        "timestamp": "2026-04-05T15:20:15.819802"
+      }
+    ],
+    "recall": [
+      {
+        "value": 0.8623950697885544,
+        "step": null,
+        "timestamp": "2026-04-05T15:20:15.819809"
+      }
+    ],
+    "f1_score": [
+      {
+        "value": 0.8851503139648159,
+        "step": null,
+        "timestamp": "2026-04-05T15:20:15.819816"
+      }
+    ],
+    "auc_roc": [
+      {
+        "value": 0.9280804036318204,
+        "step": null,
+        "timestamp": "2026-04-05T15:20:15.819822"
+      }
+    ]
+  },
+  "artifacts": []
+}

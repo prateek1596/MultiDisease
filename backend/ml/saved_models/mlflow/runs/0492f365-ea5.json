@@ -1,0 +1,57 @@
+{
+  "run_id": "0492f365-ea5",
+  "experiment_id": "0faa4782",
+  "run_name": "kidney_random_forest",
+  "status": "completed",
+  "start_time": "2026-04-05T15:20:15.858291",
+  "end_time": "2026-04-05T15:20:15.864905",
+  "tags": {
+    "disease": "kidney",
+    "model_type": "random_forest"
+  },
+  "params": {
+    "disease": "kidney",
+    "model_type": "random_forest",
+    "n_estimators": 100,
+    "max_depth": 10,
+    "test_size": 0.2
+  },
+  "metrics": {
+    "accuracy": [
+      {
+        "value": 0.949613838620651,
+        "step": null,
+        "timestamp": "2026-04-05T15:20:15.863327"
+      }
+    ],
+    "precision": [
+      {
+        "value": 0.8942569083270442,
+        "step": null,
+        "timestamp": "2026-04-05T15:20:15.863342"
+      }
+    ],
+    "recall": [
+      {
+        "value": 0.8847825034261397,
+        "step": null,
+        "timestamp": "2026-04-05T15:20:15.863350"
+      }
+    ],
+    "f1_score": [
+      {
+        "value": 0.9002578393262516,
+        "step": null,
+        "timestamp": "2026-04-05T15:20:15.863357"
+      }
+    ],
+    "auc_roc": [
+      {
+        "value": 0.9418662481774797,
+        "step": null,
+        "timestamp": "2026-04-05T15:20:15.863363"
+      }
+    ]
+  },
+  "artifacts": []
+}

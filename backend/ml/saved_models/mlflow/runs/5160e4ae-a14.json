@@ -1,0 +1,57 @@
+{
+  "run_id": "5160e4ae-a14",
+  "experiment_id": "0faa4782",
+  "run_name": "diabetes_xgboost",
+  "status": "completed",
+  "start_time": "2026-04-05T15:20:15.845161",
+  "end_time": "2026-04-05T15:20:15.850933",
+  "tags": {
+    "disease": "diabetes",
+    "model_type": "xgboost"
+  },
+  "params": {
+    "disease": "diabetes",
+    "model_type": "xgboost",
+    "n_estimators": 100,
+    "max_depth": 10,
+    "test_size": 0.2
+  },
+  "metrics": {
+    "accuracy": [
+      {
+        "value": 0.898677957949266,
+        "step": null,
+        "timestamp": "2026-04-05T15:20:15.849449"
+      }
+    ],
+    "precision": [
+      {
+        "value": 0.8567008277418259,
+        "step": null,
+        "timestamp": "2026-04-05T15:20:15.849464"
+      }
+    ],
+    "recall": [
+      {
+        "value": 0.8229602428428361,
+        "step": null,
+        "timestamp": "2026-04-05T15:20:15.849470"
+      }
+    ],
+    "f1_score": [
+      {
+        "value": 0.8174497505212567,
+        "step": null,
+        "timestamp": "2026-04-05T15:20:15.849476"
+      }
+    ],
+    "auc_roc": [
+      {
+        "value": 0.9513373867121222,
+        "step": null,
+        "timestamp": "2026-04-05T15:20:15.849482"
+      }
+    ]
+  },
+  "artifacts": []
+}

@@ -1,0 +1,46 @@
+{
+  "name": "kidney_model",
+  "description": "Kidney prediction model using random_forest",
+  "created_at": "2026-04-05T15:20:15.866434",
+  "versions": [
+    {
+      "version": 1,
+      "version_id": "v1-b56fd72a",
+      "run_id": "0492f365-ea5",
+      "model_path": "models/kidney_random_forest.joblib",
+      "stage": "production",
+      "tags": {
+        "algorithm": "random_forest"
+      },
+      "registered_at": "2026-04-05T15:20:15.866475",
+      "metrics": {
+        "accuracy": 0.949613838620651,
+        "precision": 0.8942569083270442,
+        "recall": 0.8847825034261397,
+        "f1_score": 0.9002578393262516,
+        "auc_roc": 0.9418662481774797
+      },
+      "stage_updated_at": "2026-04-05T15:20:15.890778"
+    },
+    {
+      "version": 2,
+      "version_id": "v2-bcde3475",
+      "run_id": "6249b814-3d5",
+      "model_path": "models/kidney_xgboost.joblib",
+      "stage": "staging",
+      "tags": {
+        "algorithm": "xgboost"
+      },
+      "registered_at": "2026-04-05T15:20:15.881232",
+      "metrics": {
+        "accuracy": 0.8666194752911605,
+        "precision": 0.8936224641957108,
+        "recall": 0.836432759697942,
+        "f1_score": 0.8414978590183625,
+        "auc_roc": 0.891729592544562
+      }
+    }
+  ],
+  "latest_version": 2,
+  "updated_at": "2026-04-05T15:20:15.881597"
+}

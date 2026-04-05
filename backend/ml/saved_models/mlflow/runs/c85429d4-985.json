@@ -1,0 +1,57 @@
+{
+  "run_id": "c85429d4-985",
+  "experiment_id": "0faa4782",
+  "run_name": "diabetes_random_forest",
+  "status": "completed",
+  "start_time": "2026-04-05T15:20:15.827680",
+  "end_time": "2026-04-05T15:20:15.841383",
+  "tags": {
+    "disease": "diabetes",
+    "model_type": "random_forest"
+  },
+  "params": {
+    "disease": "diabetes",
+    "model_type": "random_forest",
+    "n_estimators": 100,
+    "max_depth": 10,
+    "test_size": 0.2
+  },
+  "metrics": {
+    "accuracy": [
+      {
+        "value": 0.8742005897572138,
+        "step": null,
+        "timestamp": "2026-04-05T15:20:15.838742"
+      }
+    ],
+    "precision": [
+      {
+        "value": 0.915503321301177,
+        "step": null,
+        "timestamp": "2026-04-05T15:20:15.838760"
+      }
+    ],
+    "recall": [
+      {
+        "value": 0.8036104522619085,
+        "step": null,
+        "timestamp": "2026-04-05T15:20:15.838780"
+      }
+    ],
+    "f1_score": [
+      {
+        "value": 0.8490761895313415,
+        "step": null,
+        "timestamp": "2026-04-05T15:20:15.838786"
+      }
+    ],
+    "auc_roc": [
+      {
+        "value": 0.8857577415263601,
+        "step": null,
+        "timestamp": "2026-04-05T15:20:15.838793"
+      }
+    ]
+  },
+  "artifacts": []
+}

@@ -1,0 +1,57 @@
+{
+  "run_id": "74876e2e-d14",
+  "experiment_id": "0faa4782",
+  "run_name": "heart_random_forest",
+  "status": "completed",
+  "start_time": "2026-04-05T15:20:15.799676",
+  "end_time": "2026-04-05T15:20:15.808287",
+  "tags": {
+    "disease": "heart",
+    "model_type": "random_forest"
+  },
+  "params": {
+    "disease": "heart",
+    "model_type": "random_forest",
+    "n_estimators": 100,
+    "max_depth": 10,
+    "test_size": 0.2
+  },
+  "metrics": {
+    "accuracy": [
+      {
+        "value": 0.9403370934043529,
+        "step": null,
+        "timestamp": "2026-04-05T15:20:15.804746"
+      }
+    ],
+    "precision": [
+      {
+        "value": 0.8535998892398426,
+        "step": null,
+        "timestamp": "2026-04-05T15:20:15.804763"
+      }
+    ],
+    "recall": [
+      {
+        "value": 0.880038331432607,
+        "step": null,
+        "timestamp": "2026-04-05T15:20:15.804769"
+      }
+    ],
+    "f1_score": [
+      {
+        "value": 0.8393121472162074,
+        "step": null,
+        "timestamp": "2026-04-05T15:20:15.804775"
+      }
+    ],
+    "auc_roc": [
+      {
+        "value": 0.8836428908187242,
+        "step": null,
+        "timestamp": "2026-04-05T15:20:15.804781"
+      }
+    ]
+  },
+  "artifacts": []
+}

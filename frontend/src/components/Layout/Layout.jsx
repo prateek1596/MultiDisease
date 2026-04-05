@@ -2,17 +2,27 @@ import { Outlet, NavLink, useNavigate } from 'react-router-dom'
 import { useAuthStore } from '../../store/authStore'
 import {
   LayoutDashboard, Activity, BarChart3, History,
-  Cpu, LogOut, Heart, ChevronRight, Scale, Minimize2
+  Cpu, LogOut, Heart, ChevronRight, Scale, Minimize2,
+  LineChart, Layers, FileSpreadsheet, GitBranch, ShieldCheck,
+  TrendingUp, Database, Stethoscope
 } from 'lucide-react'
 import clsx from 'clsx'
 
 const navItems = [
   { to: '/',            icon: LayoutDashboard, label: 'Dashboard',         exact: true },
   { to: '/predict',     icon: Activity,        label: 'Predict' },
-  { to: '/performance', icon: BarChart3,        label: 'Model Performance' },
-  { to: '/history',     icon: History,          label: 'History' },
-  { to: '/fairness',    icon: Scale,            label: 'Fairness Analysis' },
-  { to: '/minimal',     icon: Minimize2,        label: 'Minimal Features' },
+  { to: '/batch',       icon: FileSpreadsheet, label: 'Batch Prediction' },
+  { to: '/multi-label', icon: Layers,          label: 'Multi-Label Prediction' },
+  { to: '/performance', icon: BarChart3,       label: 'Model Performance' },
+  { to: '/curves',      icon: LineChart,       label: 'ROC Curves' },
+  { to: '/importance',  icon: GitBranch,       label: 'Feature Importance' },
+  { to: '/uncertainty', icon: ShieldCheck,     label: 'Uncertainty' },
+  { to: '/clinical-rules', icon: Stethoscope,  label: 'Clinical Rules' },
+  { to: '/tracking',    icon: TrendingUp,      label: 'Patient Tracking' },
+  { to: '/history',     icon: History,         label: 'History' },
+  { to: '/fairness',    icon: Scale,           label: 'Fairness Analysis' },
+  { to: '/minimal',     icon: Minimize2,       label: 'Minimal Features' },
+  { to: '/mlflow',      icon: Database,        label: 'MLflow Tracking' },
 ]
 const adminItems = [
   { to: '/train', icon: Cpu, label: 'Train Models' },

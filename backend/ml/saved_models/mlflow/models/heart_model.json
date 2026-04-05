@@ -1,0 +1,46 @@
+{
+  "name": "heart_model",
+  "description": "Heart prediction model using random_forest",
+  "created_at": "2026-04-05T15:20:15.810436",
+  "versions": [
+    {
+      "version": 1,
+      "version_id": "v1-fa82ea35",
+      "run_id": "74876e2e-d14",
+      "model_path": "models/heart_random_forest.joblib",
+      "stage": "production",
+      "tags": {
+        "algorithm": "random_forest"
+      },
+      "registered_at": "2026-04-05T15:20:15.810502",
+      "metrics": {
+        "accuracy": 0.9403370934043529,
+        "precision": 0.8535998892398426,
+        "recall": 0.880038331432607,
+        "f1_score": 0.8393121472162074,
+        "auc_roc": 0.8836428908187242
+      },
+      "stage_updated_at": "2026-04-05T15:20:15.883805"
+    },
+    {
+      "version": 2,
+      "version_id": "v2-61deb023",
+      "run_id": "92da14ef-aa2",
+      "model_path": "models/heart_xgboost.joblib",
+      "stage": "staging",
+      "tags": {
+        "algorithm": "xgboost"
+      },
+      "registered_at": "2026-04-05T15:20:15.825785",
+      "metrics": {
+        "accuracy": 0.9420413659284868,
+        "precision": 0.8516143401731109,
+        "recall": 0.8623950697885544,
+        "f1_score": 0.8851503139648159,
+        "auc_roc": 0.9280804036318204
+      }
+    }
+  ],
+  "latest_version": 2,
+  "updated_at": "2026-04-05T15:20:15.826219"
+}
