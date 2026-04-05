@@ -1,13 +1,6 @@
-# ============================================================
-# MedPredict Backend Requirements
-# Tested with: Python 3.11.x (conda or venv)
-# DO NOT use Python 3.13 — scipy/sklearn not yet supported
-# ============================================================
-
 fastapi==0.111.0
 uvicorn[standard]==0.29.0
 python-dotenv==1.0.1
-python-multipart==0.0.9
 pydantic==2.7.1
 pydantic-settings==2.2.1
 sqlalchemy==2.0.30
@@ -15,26 +8,17 @@ asyncpg==0.29.0
 alembic==1.13.1
 psycopg2-binary==2.9.9
 
-# ML Core (Python 3.11 compatible)
-numpy==1.26.4
-scipy==1.13.0
-pandas==2.2.2
+# ML
 scikit-learn==1.4.2
-imbalanced-learn==0.12.2
-joblib==1.4.2
-
-# Gradient Boosting
 xgboost==2.0.3
 lightgbm==4.3.0
-
-# Explainability
+imbalanced-learn==0.12.2
 shap==0.45.0
+pandas==2.2.2
+numpy==1.26.4
+joblib==1.4.2
 
-# Advanced ML
-optuna==3.6.1
-redis==5.0.4
-
-# Visualisation / Reporting
+# Visualization / Reporting
 matplotlib==3.8.4
 seaborn==0.13.2
 reportlab==4.2.0
@@ -42,13 +26,11 @@ Pillow==10.3.0
 
 # Auth / Security
 python-jose[cryptography]==3.3.0
-passlib==1.7.4
-bcrypt==4.0.1            # pin: 4.1+ drops __about__, breaks passlib
+passlib[bcrypt]==1.7.4
+python-multipart==0.0.9
 
 # Logging / Utils
 loguru==0.7.2
 httpx==0.27.0
-
-# Testing
 pytest==8.2.0
 pytest-asyncio==0.23.6
