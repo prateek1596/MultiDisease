@@ -7,6 +7,7 @@ import {
 import toast from 'react-hot-toast'
 import clsx from 'clsx'
 import { api } from '../api/client'
+import { getApiErrorMessage } from '../utils/apiError'
 
 const DISEASES = [
   { key: 'heart', label: 'Heart Disease', emoji: '🫀' },
@@ -32,7 +33,7 @@ export default function BatchPredictionPage() {
       toast.success(`Processed ${data.summary.total_records} records!`)
     },
     onError: (err) => {
-      const msg = err.response?.data?.detail || 'Batch prediction failed'
+      const msg = getApiErrorMessage(err, 'Batch prediction failed')
       toast.error(msg)
     },
   })

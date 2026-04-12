@@ -6,6 +6,7 @@ import { useAuthStore } from '../store/authStore'
 import toast from 'react-hot-toast'
 import { Loader2, Heart, Eye, EyeOff } from 'lucide-react'
 import { useState } from 'react'
+import { getApiErrorMessage } from '../utils/apiError'
 
 export function LoginPage() {
   const { register, handleSubmit, formState: { errors } } = useForm()
@@ -20,7 +21,7 @@ export function LoginPage() {
       toast.success(`Welcome back, ${data.user.username}!`)
       navigate('/')
     },
-    onError: (err) => toast.error(err.response?.data?.detail || 'Login failed'),
+    onError: (err) => toast.error(getApiErrorMessage(err, 'Login failed')),
   })
 
   return (
@@ -94,7 +95,7 @@ export function RegisterPage() {
       toast.success('Account created! Please sign in.')
       navigate('/login')
     },
-    onError: (err) => toast.error(err.response?.data?.detail || 'Registration failed'),
+    onError: (err) => toast.error(getApiErrorMessage(err, 'Registration failed')),
   })
 
   return (

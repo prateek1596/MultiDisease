@@ -9,6 +9,7 @@ import { DISEASES, MODEL_OPTIONS } from '../utils/diseaseConfig'
 import PredictionResult from '../components/Prediction/PredictionResult'
 import OutlierAlerts from '../components/Prediction/OutlierAlerts'
 import clsx from 'clsx'
+import { getApiErrorMessage } from '../utils/apiError'
 
 const colorBorder = {
   heart:    'border-red-400 bg-red-50 text-red-700',
@@ -68,7 +69,7 @@ export default function PredictPage() {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     },
     onError: (err) => {
-      const msg = err.response?.data?.detail || 'Prediction failed. Are models trained?'
+      const msg = getApiErrorMessage(err, 'Prediction failed. Are models trained?')
       toast.error(msg)
     },
   })

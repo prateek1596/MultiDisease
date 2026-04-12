@@ -116,3 +116,263 @@
 2026-04-05T20:51:23.356412+0530 | WARNING | app.services.multilabel_service:predict_all_diseases | Failed to predict heart: 'TrainingService' object has no attribute 'predict'
 2026-04-05T20:51:23.375300+0530 | WARNING | app.services.multilabel_service:predict_all_diseases | Failed to predict diabetes: 'TrainingService' object has no attribute 'predict'
 2026-04-05T20:51:23.388582+0530 | WARNING | app.services.multilabel_service:predict_all_diseases | Failed to predict kidney: 'TrainingService' object has no attribute 'predict'
+2026-04-06T10:25:59.616820+0530 | INFO | app.main:lifespan | Starting Multi-Disease Prediction System
+2026-04-06T10:25:59.987193+0530 | INFO | app.core.database:init_db | Database initialized successfully
+2026-04-06T10:25:59.991218+0530 | INFO | app.main:lifespan | Startup complete
+2026-04-06T10:31:22.583327+0530 | INFO | app.ml.data_loader:load_heart_disease | Loaded heart.csv  shape=(297, 14)
+2026-04-06T10:31:22.666859+0530 | INFO | app.services.outlier_service:compute_feature_stats | Saved feature stats for heart: 14 features
+2026-04-06T10:31:22.693265+0530 | INFO | app.services.prediction_service:predict | Auto-selected: stacking for heart
+2026-04-06T10:31:23.051884+0530 | WARNING | app.ml.explainability.shap_explainer:get_shap_explanation | SHAP explanation failed: 'StackingClassifier' object has no attribute 'named_steps'
+2026-04-06T10:31:23.052823+0530 | INFO | app.services.prediction_service:predict | Prediction | disease=heart model=stacking result=1 (Heart Disease Detected) confidence=0.582
+2026-04-06T10:31:23.184874+0530 | INFO | app.ml.data_loader:load_heart_disease | Loaded heart.csv  shape=(297, 14)
+2026-04-06T10:31:23.238054+0530 | INFO | app.services.lime_service:_get_explainer | Created LIME explainer for heart
+2026-04-06T10:31:23.241010+0530 | ERROR | app.services.lime_service:explain_prediction | LIME explanation failed: index 13 is out of bounds for axis 0 with size 13
+2026-04-06T10:31:23.288534+0530 | INFO | app.routes.predict:_save_prediction | Prediction saved to DB: id=4
+2026-04-06T10:32:00.284123+0530 | WARNING | app.services.multilabel_service:predict_all_diseases | Failed to predict heart: 'TrainingService' object has no attribute 'predict'
+2026-04-06T10:32:00.286797+0530 | WARNING | app.services.multilabel_service:predict_all_diseases | Failed to predict diabetes: 'TrainingService' object has no attribute 'predict'
+2026-04-06T10:32:00.289951+0530 | WARNING | app.services.multilabel_service:predict_all_diseases | Failed to predict kidney: 'TrainingService' object has no attribute 'predict'
+2026-04-06T10:32:47.684526+0530 | ERROR | app.services.uncertainty_service:quantify_uncertainty | Uncertainty quantification failed: 'TrainingService' object has no attribute 'predict'
+2026-04-06T10:32:58.674130+0530 | ERROR | app.services.uncertainty_service:quantify_uncertainty | Uncertainty quantification failed: 'TrainingService' object has no attribute 'predict'
+2026-04-06T10:34:09.225418+0530 | INFO | app.ml.data_loader:load_heart_disease | Loaded heart.csv  shape=(297, 14)
+2026-04-06T10:34:09.309721+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | SMOTE → {1: np.int64(128), 0: np.int64(128)}
+2026-04-06T10:34:09.312225+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=heart train=256 test=60 features=13
+2026-04-06T10:36:47.773369+0530 | INFO | app.ml.data_loader:load_kidney_disease | Loaded kidney.csv  shape=(400, 26)  cols=['id', 'age', 'bp', 'sg', 'al']…
+2026-04-06T10:36:47.869776+0530 | WARNING | app.ml.pipelines.preprocessing:preprocess_data | SMOTE skipped: The target 'y' needs to have more than 1 class. Got 1 class instead
+2026-04-06T10:36:47.870845+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=kidney train=320 test=80 features=14
+2026-04-06T10:36:47.872293+0530 | WARNING | app.services.performance_curves_service:compare_models | Could not generate curves for logistic_regression: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- al
+- bgr
+- bp
+- bu
+- hemo
+- ...
+Feature names seen at fit time, yet now missing:
+- albumin
+- anemia
+- appetite
+- bacteria
+- blood_glucose_random
+- ...
+
+2026-04-06T10:36:48.070666+0530 | INFO | app.ml.data_loader:load_kidney_disease | Loaded kidney.csv  shape=(400, 26)  cols=['id', 'age', 'bp', 'sg', 'al']…
+2026-04-06T10:36:48.167852+0530 | WARNING | app.ml.pipelines.preprocessing:preprocess_data | SMOTE skipped: The target 'y' needs to have more than 1 class. Got 1 class instead
+2026-04-06T10:36:48.168957+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=kidney train=320 test=80 features=14
+2026-04-06T10:36:48.170168+0530 | WARNING | app.services.performance_curves_service:compare_models | Could not generate curves for random_forest: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- al
+- bgr
+- bp
+- bu
+- hemo
+- ...
+Feature names seen at fit time, yet now missing:
+- albumin
+- anemia
+- appetite
+- bacteria
+- blood_glucose_random
+- ...
+
+2026-04-06T10:36:48.192277+0530 | INFO | app.ml.data_loader:load_kidney_disease | Loaded kidney.csv  shape=(400, 26)  cols=['id', 'age', 'bp', 'sg', 'al']…
+2026-04-06T10:36:48.275167+0530 | WARNING | app.ml.pipelines.preprocessing:preprocess_data | SMOTE skipped: The target 'y' needs to have more than 1 class. Got 1 class instead
+2026-04-06T10:36:48.276127+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=kidney train=320 test=80 features=14
+2026-04-06T10:36:48.277740+0530 | WARNING | app.services.performance_curves_service:compare_models | Could not generate curves for svm: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- al
+- bgr
+- bp
+- bu
+- hemo
+- ...
+Feature names seen at fit time, yet now missing:
+- albumin
+- anemia
+- appetite
+- bacteria
+- blood_glucose_random
+- ...
+
+2026-04-06T10:36:48.305013+0530 | INFO | app.ml.data_loader:load_kidney_disease | Loaded kidney.csv  shape=(400, 26)  cols=['id', 'age', 'bp', 'sg', 'al']…
+2026-04-06T10:36:48.385465+0530 | WARNING | app.ml.pipelines.preprocessing:preprocess_data | SMOTE skipped: The target 'y' needs to have more than 1 class. Got 1 class instead
+2026-04-06T10:36:48.386391+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=kidney train=320 test=80 features=14
+2026-04-06T10:36:48.391135+0530 | WARNING | app.services.performance_curves_service:compare_models | Could not generate curves for xgboost: feature_names mismatch: ['age', 'blood_pressure', 'specific_gravity', 'albumin', 'sugar', 'red_blood_cells', 'pus_cell', 'pus_cell_clumps', 'bacteria', 'blood_glucose_random', 'blood_urea', 'serum_creatinine', 'sodium', 'potassium', 'haemoglobin', 'packed_cell_volume', 'white_blood_cell_count', 'red_blood_cell_count', 'hypertension', 'diabetes_mellitus', 'coronary_artery_disease', 'appetite', 'pedal_edema', 'anemia'] ['age', 'bp', 'sg', 'al', 'su', 'bgr', 'bu', 'sc', 'sod', 'pot', 'hemo', 'pcv', 'wc', 'rc']
+expected potassium, pus_cell_clumps, packed_cell_volume, pus_cell, blood_urea, appetite, diabetes_mellitus, albumin, bacteria, serum_creatinine, specific_gravity, pedal_edema, red_blood_cells, blood_pressure, sodium, white_blood_cell_count, blood_glucose_random, haemoglobin, sugar, hypertension, anemia, coronary_artery_disease, red_blood_cell_count in input data
+training data did not have the following fields: wc, sc, pcv, bgr, bp, rc, pot, al, sg, su, sod, hemo, bu
+2026-04-06T10:36:48.423581+0530 | INFO | app.ml.data_loader:load_kidney_disease | Loaded kidney.csv  shape=(400, 26)  cols=['id', 'age', 'bp', 'sg', 'al']…
+2026-04-06T10:36:48.502938+0530 | WARNING | app.ml.pipelines.preprocessing:preprocess_data | SMOTE skipped: The target 'y' needs to have more than 1 class. Got 1 class instead
+2026-04-06T10:36:48.503780+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=kidney train=320 test=80 features=14
+2026-04-06T10:36:51.290777+0530 | WARNING | app.services.performance_curves_service:compare_models | Could not generate curves for lightgbm: The number of features in data (14) is not the same as it was in training data (24).
+You can set ``predict_disable_shape_check=true`` to discard this error, but please be aware what you are doing.
+2026-04-06T10:36:51.453467+0530 | INFO | app.ml.data_loader:load_kidney_disease | Loaded kidney.csv  shape=(400, 26)  cols=['id', 'age', 'bp', 'sg', 'al']…
+2026-04-06T10:36:51.565535+0530 | WARNING | app.ml.pipelines.preprocessing:preprocess_data | SMOTE skipped: The target 'y' needs to have more than 1 class. Got 1 class instead
+2026-04-06T10:36:51.566516+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=kidney train=320 test=80 features=14
+2026-04-06T10:36:51.567952+0530 | WARNING | app.services.performance_curves_service:compare_models | Could not generate curves for stacking: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- al
+- bgr
+- bp
+- bu
+- hemo
+- ...
+Feature names seen at fit time, yet now missing:
+- albumin
+- anemia
+- appetite
+- bacteria
+- blood_glucose_random
+- ...
+
+2026-04-06T10:36:51.598362+0530 | INFO | app.ml.data_loader:load_kidney_disease | Loaded kidney.csv  shape=(400, 26)  cols=['id', 'age', 'bp', 'sg', 'al']…
+2026-04-06T10:36:51.679504+0530 | WARNING | app.ml.pipelines.preprocessing:preprocess_data | SMOTE skipped: The target 'y' needs to have more than 1 class. Got 1 class instead
+2026-04-06T10:36:51.680498+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=kidney train=320 test=80 features=14
+2026-04-06T10:36:51.685266+0530 | ERROR | app.routes.analytics:get_threshold_metrics | Get threshold metrics failed: feature_names mismatch: ['age', 'blood_pressure', 'specific_gravity', 'albumin', 'sugar', 'red_blood_cells', 'pus_cell', 'pus_cell_clumps', 'bacteria', 'blood_glucose_random', 'blood_urea', 'serum_creatinine', 'sodium', 'potassium', 'haemoglobin', 'packed_cell_volume', 'white_blood_cell_count', 'red_blood_cell_count', 'hypertension', 'diabetes_mellitus', 'coronary_artery_disease', 'appetite', 'pedal_edema', 'anemia'] ['age', 'bp', 'sg', 'al', 'su', 'bgr', 'bu', 'sc', 'sod', 'pot', 'hemo', 'pcv', 'wc', 'rc']
+expected potassium, pus_cell_clumps, packed_cell_volume, pus_cell, blood_urea, appetite, diabetes_mellitus, albumin, bacteria, serum_creatinine, specific_gravity, pedal_edema, red_blood_cells, blood_pressure, sodium, white_blood_cell_count, blood_glucose_random, haemoglobin, sugar, hypertension, anemia, coronary_artery_disease, red_blood_cell_count in input data
+training data did not have the following fields: wc, sc, pcv, bgr, bp, rc, pot, al, sg, su, sod, hemo, bu
+2026-04-06T10:36:52.751427+0530 | INFO | app.ml.data_loader:load_kidney_disease | Loaded kidney.csv  shape=(400, 26)  cols=['id', 'age', 'bp', 'sg', 'al']…
+2026-04-06T10:36:52.843791+0530 | WARNING | app.ml.pipelines.preprocessing:preprocess_data | SMOTE skipped: The target 'y' needs to have more than 1 class. Got 1 class instead
+2026-04-06T10:36:52.844712+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=kidney train=320 test=80 features=14
+2026-04-06T10:36:52.849110+0530 | ERROR | app.routes.analytics:get_threshold_metrics | Get threshold metrics failed: feature_names mismatch: ['age', 'blood_pressure', 'specific_gravity', 'albumin', 'sugar', 'red_blood_cells', 'pus_cell', 'pus_cell_clumps', 'bacteria', 'blood_glucose_random', 'blood_urea', 'serum_creatinine', 'sodium', 'potassium', 'haemoglobin', 'packed_cell_volume', 'white_blood_cell_count', 'red_blood_cell_count', 'hypertension', 'diabetes_mellitus', 'coronary_artery_disease', 'appetite', 'pedal_edema', 'anemia'] ['age', 'bp', 'sg', 'al', 'su', 'bgr', 'bu', 'sc', 'sod', 'pot', 'hemo', 'pcv', 'wc', 'rc']
+expected potassium, pus_cell_clumps, packed_cell_volume, pus_cell, blood_urea, appetite, diabetes_mellitus, albumin, bacteria, serum_creatinine, specific_gravity, pedal_edema, red_blood_cells, blood_pressure, sodium, white_blood_cell_count, blood_glucose_random, haemoglobin, sugar, hypertension, anemia, coronary_artery_disease, red_blood_cell_count in input data
+training data did not have the following fields: wc, sc, pcv, bgr, bp, rc, pot, al, sg, su, sod, hemo, bu
+2026-04-12T18:33:47.383843+0530 | INFO | app.main:lifespan | Starting Multi-Disease Prediction System
+2026-04-12T18:33:47.882404+0530 | INFO | app.core.database:init_db | Database initialized successfully
+2026-04-12T18:33:47.885070+0530 | INFO | app.main:lifespan | Startup complete
+2026-04-12T18:40:54.356115+0530 | INFO | app.ml.data_loader:load_heart_disease | Loaded heart.csv  shape=(297, 14)
+2026-04-12T18:40:54.482724+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | SMOTE → {1: np.int64(128), 0: np.int64(128)}
+2026-04-12T18:40:54.484444+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=heart train=256 test=60 features=13
+2026-04-12T18:42:06.806751+0530 | INFO | app.ml.data_loader:load_kidney_disease | Loaded kidney.csv  shape=(400, 26)  cols=['id', 'age', 'bp', 'sg', 'al']…
+2026-04-12T18:42:06.850300+0530 | WARNING | app.ml.pipelines.preprocessing:preprocess_data | SMOTE skipped: The target 'y' needs to have more than 1 class. Got 1 class instead
+2026-04-12T18:42:06.850778+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=kidney train=320 test=80 features=14
+2026-04-12T18:42:06.857051+0530 | ERROR | app.routes.analytics:get_performance_curves | Generate curves failed: feature_names mismatch: ['age', 'blood_pressure', 'specific_gravity', 'albumin', 'sugar', 'red_blood_cells', 'pus_cell', 'pus_cell_clumps', 'bacteria', 'blood_glucose_random', 'blood_urea', 'serum_creatinine', 'sodium', 'potassium', 'haemoglobin', 'packed_cell_volume', 'white_blood_cell_count', 'red_blood_cell_count', 'hypertension', 'diabetes_mellitus', 'coronary_artery_disease', 'appetite', 'pedal_edema', 'anemia'] ['age', 'bp', 'sg', 'al', 'su', 'bgr', 'bu', 'sc', 'sod', 'pot', 'hemo', 'pcv', 'wc', 'rc']
+expected albumin, white_blood_cell_count, specific_gravity, hypertension, haemoglobin, serum_creatinine, sodium, bacteria, sugar, blood_pressure, potassium, pedal_edema, diabetes_mellitus, packed_cell_volume, appetite, coronary_artery_disease, pus_cell, pus_cell_clumps, red_blood_cells, blood_urea, anemia, blood_glucose_random, red_blood_cell_count in input data
+training data did not have the following fields: bu, sg, pot, bp, al, sc, sod, rc, su, hemo, wc, bgr, pcv
+2026-04-12T18:42:06.875552+0530 | INFO | app.ml.data_loader:load_kidney_disease | Loaded kidney.csv  shape=(400, 26)  cols=['id', 'age', 'bp', 'sg', 'al']…
+2026-04-12T18:42:06.919047+0530 | WARNING | app.ml.pipelines.preprocessing:preprocess_data | SMOTE skipped: The target 'y' needs to have more than 1 class. Got 1 class instead
+2026-04-12T18:42:06.919578+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=kidney train=320 test=80 features=14
+2026-04-12T18:42:06.922073+0530 | ERROR | app.routes.analytics:get_threshold_metrics | Get threshold metrics failed: feature_names mismatch: ['age', 'blood_pressure', 'specific_gravity', 'albumin', 'sugar', 'red_blood_cells', 'pus_cell', 'pus_cell_clumps', 'bacteria', 'blood_glucose_random', 'blood_urea', 'serum_creatinine', 'sodium', 'potassium', 'haemoglobin', 'packed_cell_volume', 'white_blood_cell_count', 'red_blood_cell_count', 'hypertension', 'diabetes_mellitus', 'coronary_artery_disease', 'appetite', 'pedal_edema', 'anemia'] ['age', 'bp', 'sg', 'al', 'su', 'bgr', 'bu', 'sc', 'sod', 'pot', 'hemo', 'pcv', 'wc', 'rc']
+expected albumin, white_blood_cell_count, specific_gravity, hypertension, haemoglobin, serum_creatinine, sodium, bacteria, sugar, blood_pressure, potassium, pedal_edema, diabetes_mellitus, packed_cell_volume, appetite, coronary_artery_disease, pus_cell, pus_cell_clumps, red_blood_cells, blood_urea, anemia, blood_glucose_random, red_blood_cell_count in input data
+training data did not have the following fields: bu, sg, pot, bp, al, sc, sod, rc, su, hemo, wc, bgr, pcv
+2026-04-12T18:42:07.890698+0530 | INFO | app.ml.data_loader:load_kidney_disease | Loaded kidney.csv  shape=(400, 26)  cols=['id', 'age', 'bp', 'sg', 'al']…
+2026-04-12T18:42:07.932692+0530 | WARNING | app.ml.pipelines.preprocessing:preprocess_data | SMOTE skipped: The target 'y' needs to have more than 1 class. Got 1 class instead
+2026-04-12T18:42:07.933180+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=kidney train=320 test=80 features=14
+2026-04-12T18:42:07.935559+0530 | ERROR | app.routes.analytics:get_performance_curves | Generate curves failed: feature_names mismatch: ['age', 'blood_pressure', 'specific_gravity', 'albumin', 'sugar', 'red_blood_cells', 'pus_cell', 'pus_cell_clumps', 'bacteria', 'blood_glucose_random', 'blood_urea', 'serum_creatinine', 'sodium', 'potassium', 'haemoglobin', 'packed_cell_volume', 'white_blood_cell_count', 'red_blood_cell_count', 'hypertension', 'diabetes_mellitus', 'coronary_artery_disease', 'appetite', 'pedal_edema', 'anemia'] ['age', 'bp', 'sg', 'al', 'su', 'bgr', 'bu', 'sc', 'sod', 'pot', 'hemo', 'pcv', 'wc', 'rc']
+expected albumin, white_blood_cell_count, specific_gravity, hypertension, haemoglobin, serum_creatinine, sodium, bacteria, sugar, blood_pressure, potassium, pedal_edema, diabetes_mellitus, packed_cell_volume, appetite, coronary_artery_disease, pus_cell, pus_cell_clumps, red_blood_cells, blood_urea, anemia, blood_glucose_random, red_blood_cell_count in input data
+training data did not have the following fields: bu, sg, pot, bp, al, sc, sod, rc, su, hemo, wc, bgr, pcv
+2026-04-12T18:42:07.980396+0530 | INFO | app.ml.data_loader:load_kidney_disease | Loaded kidney.csv  shape=(400, 26)  cols=['id', 'age', 'bp', 'sg', 'al']…
+2026-04-12T18:42:08.115518+0530 | WARNING | app.ml.pipelines.preprocessing:preprocess_data | SMOTE skipped: The target 'y' needs to have more than 1 class. Got 1 class instead
+2026-04-12T18:42:08.131509+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=kidney train=320 test=80 features=14
+2026-04-12T18:42:08.144476+0530 | ERROR | app.routes.analytics:get_threshold_metrics | Get threshold metrics failed: feature_names mismatch: ['age', 'blood_pressure', 'specific_gravity', 'albumin', 'sugar', 'red_blood_cells', 'pus_cell', 'pus_cell_clumps', 'bacteria', 'blood_glucose_random', 'blood_urea', 'serum_creatinine', 'sodium', 'potassium', 'haemoglobin', 'packed_cell_volume', 'white_blood_cell_count', 'red_blood_cell_count', 'hypertension', 'diabetes_mellitus', 'coronary_artery_disease', 'appetite', 'pedal_edema', 'anemia'] ['age', 'bp', 'sg', 'al', 'su', 'bgr', 'bu', 'sc', 'sod', 'pot', 'hemo', 'pcv', 'wc', 'rc']
+expected albumin, white_blood_cell_count, specific_gravity, hypertension, haemoglobin, serum_creatinine, sodium, bacteria, sugar, blood_pressure, potassium, pedal_edema, diabetes_mellitus, packed_cell_volume, appetite, coronary_artery_disease, pus_cell, pus_cell_clumps, red_blood_cells, blood_urea, anemia, blood_glucose_random, red_blood_cell_count in input data
+training data did not have the following fields: bu, sg, pot, bp, al, sc, sod, rc, su, hemo, wc, bgr, pcv
+2026-04-12T18:42:24.427339+0530 | INFO | app.ml.data_loader:load_kidney_disease | Loaded kidney.csv  shape=(400, 26)  cols=['id', 'age', 'bp', 'sg', 'al']…
+2026-04-12T18:42:24.557185+0530 | WARNING | app.ml.pipelines.preprocessing:preprocess_data | SMOTE skipped: The target 'y' needs to have more than 1 class. Got 1 class instead
+2026-04-12T18:42:24.558092+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=kidney train=320 test=80 features=14
+2026-04-12T18:42:24.565578+0530 | ERROR | app.routes.analytics:get_performance_curves | Generate curves failed: feature_names mismatch: ['age', 'blood_pressure', 'specific_gravity', 'albumin', 'sugar', 'red_blood_cells', 'pus_cell', 'pus_cell_clumps', 'bacteria', 'blood_glucose_random', 'blood_urea', 'serum_creatinine', 'sodium', 'potassium', 'haemoglobin', 'packed_cell_volume', 'white_blood_cell_count', 'red_blood_cell_count', 'hypertension', 'diabetes_mellitus', 'coronary_artery_disease', 'appetite', 'pedal_edema', 'anemia'] ['age', 'bp', 'sg', 'al', 'su', 'bgr', 'bu', 'sc', 'sod', 'pot', 'hemo', 'pcv', 'wc', 'rc']
+expected albumin, white_blood_cell_count, specific_gravity, hypertension, haemoglobin, serum_creatinine, sodium, bacteria, sugar, blood_pressure, potassium, pedal_edema, diabetes_mellitus, packed_cell_volume, appetite, coronary_artery_disease, pus_cell, pus_cell_clumps, red_blood_cells, blood_urea, anemia, blood_glucose_random, red_blood_cell_count in input data
+training data did not have the following fields: bu, sg, pot, bp, al, sc, sod, rc, su, hemo, wc, bgr, pcv
+2026-04-12T18:42:24.606934+0530 | INFO | app.ml.data_loader:load_kidney_disease | Loaded kidney.csv  shape=(400, 26)  cols=['id', 'age', 'bp', 'sg', 'al']…
+2026-04-12T18:42:24.752426+0530 | WARNING | app.ml.pipelines.preprocessing:preprocess_data | SMOTE skipped: The target 'y' needs to have more than 1 class. Got 1 class instead
+2026-04-12T18:42:24.753295+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=kidney train=320 test=80 features=14
+2026-04-12T18:42:24.757507+0530 | ERROR | app.routes.analytics:get_threshold_metrics | Get threshold metrics failed: feature_names mismatch: ['age', 'blood_pressure', 'specific_gravity', 'albumin', 'sugar', 'red_blood_cells', 'pus_cell', 'pus_cell_clumps', 'bacteria', 'blood_glucose_random', 'blood_urea', 'serum_creatinine', 'sodium', 'potassium', 'haemoglobin', 'packed_cell_volume', 'white_blood_cell_count', 'red_blood_cell_count', 'hypertension', 'diabetes_mellitus', 'coronary_artery_disease', 'appetite', 'pedal_edema', 'anemia'] ['age', 'bp', 'sg', 'al', 'su', 'bgr', 'bu', 'sc', 'sod', 'pot', 'hemo', 'pcv', 'wc', 'rc']
+expected albumin, white_blood_cell_count, specific_gravity, hypertension, haemoglobin, serum_creatinine, sodium, bacteria, sugar, blood_pressure, potassium, pedal_edema, diabetes_mellitus, packed_cell_volume, appetite, coronary_artery_disease, pus_cell, pus_cell_clumps, red_blood_cells, blood_urea, anemia, blood_glucose_random, red_blood_cell_count in input data
+training data did not have the following fields: bu, sg, pot, bp, al, sc, sod, rc, su, hemo, wc, bgr, pcv
+2026-04-12T18:42:25.605940+0530 | INFO | app.ml.data_loader:load_kidney_disease | Loaded kidney.csv  shape=(400, 26)  cols=['id', 'age', 'bp', 'sg', 'al']…
+2026-04-12T18:42:25.721752+0530 | WARNING | app.ml.pipelines.preprocessing:preprocess_data | SMOTE skipped: The target 'y' needs to have more than 1 class. Got 1 class instead
+2026-04-12T18:42:25.722411+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=kidney train=320 test=80 features=14
+2026-04-12T18:42:25.728175+0530 | ERROR | app.routes.analytics:get_performance_curves | Generate curves failed: feature_names mismatch: ['age', 'blood_pressure', 'specific_gravity', 'albumin', 'sugar', 'red_blood_cells', 'pus_cell', 'pus_cell_clumps', 'bacteria', 'blood_glucose_random', 'blood_urea', 'serum_creatinine', 'sodium', 'potassium', 'haemoglobin', 'packed_cell_volume', 'white_blood_cell_count', 'red_blood_cell_count', 'hypertension', 'diabetes_mellitus', 'coronary_artery_disease', 'appetite', 'pedal_edema', 'anemia'] ['age', 'bp', 'sg', 'al', 'su', 'bgr', 'bu', 'sc', 'sod', 'pot', 'hemo', 'pcv', 'wc', 'rc']
+expected albumin, white_blood_cell_count, specific_gravity, hypertension, haemoglobin, serum_creatinine, sodium, bacteria, sugar, blood_pressure, potassium, pedal_edema, diabetes_mellitus, packed_cell_volume, appetite, coronary_artery_disease, pus_cell, pus_cell_clumps, red_blood_cells, blood_urea, anemia, blood_glucose_random, red_blood_cell_count in input data
+training data did not have the following fields: bu, sg, pot, bp, al, sc, sod, rc, su, hemo, wc, bgr, pcv
+2026-04-12T18:42:25.849002+0530 | INFO | app.ml.data_loader:load_kidney_disease | Loaded kidney.csv  shape=(400, 26)  cols=['id', 'age', 'bp', 'sg', 'al']…
+2026-04-12T18:42:25.967773+0530 | WARNING | app.ml.pipelines.preprocessing:preprocess_data | SMOTE skipped: The target 'y' needs to have more than 1 class. Got 1 class instead
+2026-04-12T18:42:25.968987+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=kidney train=320 test=80 features=14
+2026-04-12T18:42:25.973201+0530 | ERROR | app.routes.analytics:get_threshold_metrics | Get threshold metrics failed: feature_names mismatch: ['age', 'blood_pressure', 'specific_gravity', 'albumin', 'sugar', 'red_blood_cells', 'pus_cell', 'pus_cell_clumps', 'bacteria', 'blood_glucose_random', 'blood_urea', 'serum_creatinine', 'sodium', 'potassium', 'haemoglobin', 'packed_cell_volume', 'white_blood_cell_count', 'red_blood_cell_count', 'hypertension', 'diabetes_mellitus', 'coronary_artery_disease', 'appetite', 'pedal_edema', 'anemia'] ['age', 'bp', 'sg', 'al', 'su', 'bgr', 'bu', 'sc', 'sod', 'pot', 'hemo', 'pcv', 'wc', 'rc']
+expected albumin, white_blood_cell_count, specific_gravity, hypertension, haemoglobin, serum_creatinine, sodium, bacteria, sugar, blood_pressure, potassium, pedal_edema, diabetes_mellitus, packed_cell_volume, appetite, coronary_artery_disease, pus_cell, pus_cell_clumps, red_blood_cells, blood_urea, anemia, blood_glucose_random, red_blood_cell_count in input data
+training data did not have the following fields: bu, sg, pot, bp, al, sc, sod, rc, su, hemo, wc, bgr, pcv
+2026-04-12T18:42:26.653934+0530 | INFO | app.ml.data_loader:load_kidney_disease | Loaded kidney.csv  shape=(400, 26)  cols=['id', 'age', 'bp', 'sg', 'al']…
+2026-04-12T18:42:26.737219+0530 | WARNING | app.ml.pipelines.preprocessing:preprocess_data | SMOTE skipped: The target 'y' needs to have more than 1 class. Got 1 class instead
+2026-04-12T18:42:26.738197+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=kidney train=320 test=80 features=14
+2026-04-12T18:42:26.739818+0530 | WARNING | app.services.performance_curves_service:compare_models | Could not generate curves for logistic_regression: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- al
+- bgr
+- bp
+- bu
+- hemo
+- ...
+Feature names seen at fit time, yet now missing:
+- albumin
+- anemia
+- appetite
+- bacteria
+- blood_glucose_random
+- ...
+
+2026-04-12T18:42:26.935241+0530 | INFO | app.ml.data_loader:load_kidney_disease | Loaded kidney.csv  shape=(400, 26)  cols=['id', 'age', 'bp', 'sg', 'al']…
+2026-04-12T18:42:27.011165+0530 | WARNING | app.ml.pipelines.preprocessing:preprocess_data | SMOTE skipped: The target 'y' needs to have more than 1 class. Got 1 class instead
+2026-04-12T18:42:27.011974+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=kidney train=320 test=80 features=14
+2026-04-12T18:42:27.013553+0530 | WARNING | app.services.performance_curves_service:compare_models | Could not generate curves for random_forest: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- al
+- bgr
+- bp
+- bu
+- hemo
+- ...
+Feature names seen at fit time, yet now missing:
+- albumin
+- anemia
+- appetite
+- bacteria
+- blood_glucose_random
+- ...
+
+2026-04-12T18:42:27.034112+0530 | INFO | app.ml.data_loader:load_kidney_disease | Loaded kidney.csv  shape=(400, 26)  cols=['id', 'age', 'bp', 'sg', 'al']…
+2026-04-12T18:42:27.260148+0530 | WARNING | app.ml.pipelines.preprocessing:preprocess_data | SMOTE skipped: The target 'y' needs to have more than 1 class. Got 1 class instead
+2026-04-12T18:42:27.282373+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=kidney train=320 test=80 features=14
+2026-04-12T18:42:27.316418+0530 | WARNING | app.services.performance_curves_service:compare_models | Could not generate curves for svm: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- al
+- bgr
+- bp
+- bu
+- hemo
+- ...
+Feature names seen at fit time, yet now missing:
+- albumin
+- anemia
+- appetite
+- bacteria
+- blood_glucose_random
+- ...
+
+2026-04-12T18:42:27.373547+0530 | INFO | app.ml.data_loader:load_kidney_disease | Loaded kidney.csv  shape=(400, 26)  cols=['id', 'age', 'bp', 'sg', 'al']…
+2026-04-12T18:42:27.625396+0530 | WARNING | app.ml.pipelines.preprocessing:preprocess_data | SMOTE skipped: The target 'y' needs to have more than 1 class. Got 1 class instead
+2026-04-12T18:42:27.626405+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=kidney train=320 test=80 features=14
+2026-04-12T18:42:27.629064+0530 | WARNING | app.services.performance_curves_service:compare_models | Could not generate curves for xgboost: feature_names mismatch: ['age', 'blood_pressure', 'specific_gravity', 'albumin', 'sugar', 'red_blood_cells', 'pus_cell', 'pus_cell_clumps', 'bacteria', 'blood_glucose_random', 'blood_urea', 'serum_creatinine', 'sodium', 'potassium', 'haemoglobin', 'packed_cell_volume', 'white_blood_cell_count', 'red_blood_cell_count', 'hypertension', 'diabetes_mellitus', 'coronary_artery_disease', 'appetite', 'pedal_edema', 'anemia'] ['age', 'bp', 'sg', 'al', 'su', 'bgr', 'bu', 'sc', 'sod', 'pot', 'hemo', 'pcv', 'wc', 'rc']
+expected albumin, white_blood_cell_count, specific_gravity, hypertension, haemoglobin, serum_creatinine, sodium, bacteria, sugar, blood_pressure, potassium, pedal_edema, diabetes_mellitus, packed_cell_volume, appetite, coronary_artery_disease, pus_cell, pus_cell_clumps, red_blood_cells, blood_urea, anemia, blood_glucose_random, red_blood_cell_count in input data
+training data did not have the following fields: bu, sg, pot, bp, al, sc, sod, rc, su, hemo, wc, bgr, pcv
+2026-04-12T18:42:27.660506+0530 | INFO | app.ml.data_loader:load_kidney_disease | Loaded kidney.csv  shape=(400, 26)  cols=['id', 'age', 'bp', 'sg', 'al']…
+2026-04-12T18:42:27.723600+0530 | WARNING | app.ml.pipelines.preprocessing:preprocess_data | SMOTE skipped: The target 'y' needs to have more than 1 class. Got 1 class instead
+2026-04-12T18:42:27.726315+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=kidney train=320 test=80 features=14
+2026-04-12T18:42:31.438727+0530 | WARNING | app.services.performance_curves_service:compare_models | Could not generate curves for lightgbm: The number of features in data (14) is not the same as it was in training data (24).
+You can set ``predict_disable_shape_check=true`` to discard this error, but please be aware what you are doing.
+2026-04-12T18:42:31.505086+0530 | INFO | app.ml.data_loader:load_kidney_disease | Loaded kidney.csv  shape=(400, 26)  cols=['id', 'age', 'bp', 'sg', 'al']…
+2026-04-12T18:42:31.552837+0530 | WARNING | app.ml.pipelines.preprocessing:preprocess_data | SMOTE skipped: The target 'y' needs to have more than 1 class. Got 1 class instead
+2026-04-12T18:42:31.553396+0530 | INFO | app.ml.pipelines.preprocessing:preprocess_data | Preprocessing done | disease=kidney train=320 test=80 features=14
+2026-04-12T18:42:31.554585+0530 | WARNING | app.services.performance_curves_service:compare_models | Could not generate curves for stacking: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- al
+- bgr
+- bp
+- bu
+- hemo
+- ...
+Feature names seen at fit time, yet now missing:
+- albumin
+- anemia
+- appetite
+- bacteria
+- blood_glucose_random
+- ...
+

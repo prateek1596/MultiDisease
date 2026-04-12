@@ -7,6 +7,7 @@ import {
   DollarSign, Users, Zap, FileText, AlertCircle
 } from 'lucide-react'
 import clsx from 'clsx'
+import { getApiErrorMessage } from '../utils/apiError'
 
 const DISEASES = ['heart', 'diabetes', 'kidney']
 const DISEASE_EMOJI = { heart: '🫀', diabetes: '🩸', kidney: '🫘' }
@@ -71,7 +72,7 @@ export default function MinimalFeaturesPage() {
         toast.success('Analysis complete!')
       }
     },
-    onError: (err) => toast.error(err.response?.data?.detail || 'Analysis failed'),
+    onError: (err) => toast.error(getApiErrorMessage(err, 'Analysis failed')),
   })
 
   const cfg = result?.minimal_config

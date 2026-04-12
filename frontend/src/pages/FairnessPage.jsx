@@ -12,6 +12,7 @@ import {
   CartesianGrid, Tooltip, Legend, Cell
 } from 'recharts'
 import clsx from 'clsx'
+import { getApiErrorMessage } from '../utils/apiError'
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 const DISEASES      = ['heart', 'diabetes', 'kidney']
@@ -141,7 +142,7 @@ export default function FairnessPage() {
       toast.success('Fairness analysis complete!')
     },
     onError: err => {
-      const msg = err.response?.data?.detail || 'Analysis failed'
+      const msg = getApiErrorMessage(err, 'Analysis failed')
       toast.error(msg)
     },
   })

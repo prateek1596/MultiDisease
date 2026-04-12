@@ -1,7 +1,19 @@
 import axios from 'axios'
 import { useAuthStore } from '../store/authStore'
 
-const BASE_URL = import.meta.env.VITE_API_URL || '/api'
+function normalizeApiBaseUrl(rawUrl) {
+  const fallback = '/api'
+  const value = (rawUrl || fallback).trim()
+
+  if (!value) return fallback
+
+  const withoutTrailingSlash = value.replace(/\/+$/, '')
+  if (/\/api$/i.test(withoutTrailingSlash)) return withoutTrailingSlash
+
+  return `${withoutTrailingSlash}/api`
+}
+
+const BASE_URL = normalizeApiBaseUrl(import.meta.env.VITE_API_URL)
 
 export const api = axios.create({
   baseURL: BASE_URL,

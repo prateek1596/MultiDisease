@@ -4,6 +4,7 @@ import { trainAPI } from '../api/client'
 import toast from 'react-hot-toast'
 import { Cpu, Play, RefreshCw, CheckCircle, XCircle, Loader2 } from 'lucide-react'
 import clsx from 'clsx'
+import { getApiErrorMessage } from '../utils/apiError'
 
 const DISEASES = ['heart', 'diabetes', 'kidney']
 const MODELS = [
@@ -34,7 +35,7 @@ export default function TrainPage() {
       refetchStatus()
     },
     onError: (err) => {
-      toast.error(err.response?.data?.detail || 'Failed to start training')
+      toast.error(getApiErrorMessage(err, 'Failed to start training'))
     },
   })
 
